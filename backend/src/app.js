@@ -2,10 +2,13 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const favicon = require('serve-favicon');
+const cors = require('cors'); // Import CORS
 const Transaction = require('./models/transaction');
 
 const app = express();
-const PORT = 3000;
+const PORT = 5000;
+
+app.use(cors()); // Enable CORS
 
 // Serve the favicon
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
